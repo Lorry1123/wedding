@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/invatation/invatation"
+    "pages/invatation/invatation",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,6 +20,10 @@
       {
         "pagePath": "pages/invatation/invatation",
         "text": "请柬"
+      },
+      {
+        "pagePath": "pages/about/about",
+        "text": "关于"
       }
     ]
   },
