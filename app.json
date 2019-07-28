@@ -15,14 +15,20 @@
     "list": [
       {
         "pagePath": "pages/index/index",
+        "iconPath": "static/icons/index.png",
+        "selectedIconPath": "static/icons/index.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/invatation/invatation",
+        "iconPath": "static/icons/location.png",
+        "selectedIconPath": "static/icons/location.png",
         "text": "请柬"
       },
       {
         "pagePath": "pages/about/about",
+        "iconPath": "static/icons/me.png",
+        "selectedIconPath": "static/icons/me.png",
         "text": "关于"
       }
     ]
