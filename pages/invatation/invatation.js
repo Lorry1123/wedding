@@ -5,7 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    map_markers: [
+      {
+        iconPath: "/static/icons/map_marker.png",
+        id: 0,
+        latitude: 31.457208,
+        longitude: 104.718552,
+        width: 30,
+        height: 30
+      }
+    ]
   },
 
   /**

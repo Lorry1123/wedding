@@ -1,4 +1,9 @@
 <!--pages/invatation/invatation.wxml-->
-<text>
-请柬哒！
+<view>
+  <text>
+婚礼地址：
+王子大酒店 A 楼 B 号厅
 </text>
+  <map longitude="104.718552" latitude="31.457208" markers="{{map_markers}}" class="map" scale="18">
+  </map>
+</view>
