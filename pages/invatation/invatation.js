@@ -5,12 +5,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-    map_markers: [
+    mianyang_map_markers: [
       {
         iconPath: "/static/icons/map_marker.png",
         id: 0,
         latitude: 31.457208,
         longitude: 104.718552,
+        width: 30,
+        height: 30
+      }
+    ],
+    suining_map_markers: [
+      {
+        iconPath: "/static/icons/map_marker.png",
+        id: 1,
+        latitude: 30.592620,
+        longitude: 105.240390,
         width: 30,
         height: 30
       }
