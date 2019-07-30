@@ -50,5 +50,9 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
-  }
+  },
+  stopMusic: () => {
+    const _app = getApp();
+    _app.innerAudioContext.stop();
+  },
 })
