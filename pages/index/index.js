@@ -53,6 +53,10 @@ Page({
   },
   stopMusic: () => {
     const _app = getApp();
-    _app.innerAudioContext.stop();
+    _app.innerAudioContext.pause();
   },
+  startMusic: () => {
+    const _app = getApp();
+    _app.innerAudioContext.play();
+  }
 })

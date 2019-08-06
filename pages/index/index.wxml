@@ -11,4 +11,5 @@
     <text class="user-motto">{{motto}}</text>
   </view>
   <button bindtap="stopMusic">停止音乐</button>
+  <button bindtap="startMusic">继续音乐</button>
 </view>
