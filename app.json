@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs",
     "pages/invatation/invatation",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/bless/bless"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,21 +15,21 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "static/icons/index.png",
-        "selectedIconPath": "static/icons/index_selected.png",
-        "text": "首页"
-      },
-      {
-        "pagePath": "pages/invatation/invatation",
-        "iconPath": "static/icons/location.png",
-        "selectedIconPath": "static/icons/location_selected.png",
-        "text": "请柬"
+        "iconPath": "static/icons/invitation_icon_unselected.png",
+        "selectedIconPath": "static/icons/invitation_icon_selected.png",
+        "text": "邀请函"
       },
       {
         "pagePath": "pages/about/about",
-        "iconPath": "static/icons/me.png",
-        "selectedIconPath": "static/icons/me_selected.png",
-        "text": "关于"
+        "iconPath": "static/icons/about_us_icon_unselected.png",
+        "selectedIconPath": "static/icons/about_us_icon_selected.png",
+        "text": "关于我们"
+      },
+      {
+        "pagePath": "pages/bless/bless",
+        "iconPath": "static/icons/about_us_icon_unselected.png",
+        "selectedIconPath": "static/icons/about_us_icon_selected.png",
+        "text": "送祝福"
       }
     ]
   },
