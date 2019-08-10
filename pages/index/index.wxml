@@ -13,7 +13,7 @@
       邀请函
       <span class="titleCross"> - </span>
     </span>
-    <image class="invatationItem" src="https://via.placeholder.com/700" />
+    <image class="invatationItem" src="/static/pictures/invitation.png" />
   </view>
   <view class="banquetContainer">
     <span class="title">
