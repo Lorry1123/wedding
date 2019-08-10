@@ -1,6 +1,31 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
+  <swiper class="swiperContainer" indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorColor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="swiperItem" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="invatationContainer">
+    <span class="title">
+      <span class="titleCross"> - </span>
+      邀请函
+      <span class="titleCross"> - </span>
+    </span>
+    <image class="invatationItem" src="https://via.placeholder.com/700" />
+  </view>
+  <view class="banquetContainer">
+    <span class="title">
+      <span class="titleCross"> - </span>
+      宴会地址
+      <span class="titleCross"> - </span>
+    </span>
+    <map style="width: 100%; height: 200px" longitude="104.718552" latitude="31.457208" markers="{{mianyang_map_markers}}" class="map" scale="18"></map>
+  </view>
+
+
+  <!-- <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -9,7 +34,7 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
-  </view>
-  <button bindtap="stopMusic">停止音乐</button>
-  <button bindtap="startMusic">继续音乐</button>
+  </view> -->
+  <!-- <button bindtap="stopMusic">停止音乐</button>
+  <button bindtap="startMusic">继续音乐</button> -->
 </view>
