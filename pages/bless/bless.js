@@ -27,6 +27,13 @@ Page({
       avatar: this.data.userInfo.avatarUrl,
       msg: this.data.message,
     });
+    for (var i = 0; i <= 9; i ++) {
+      other_msgs.push({
+        nick: this.data.userInfo.nickName,
+        avatar: this.data.userInfo.avatarUrl,
+        msg: this.data.message,
+      });
+    }
     console.log(other_msgs);
     this.setData({
       other_messages: other_msgs,
