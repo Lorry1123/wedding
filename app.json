@@ -27,8 +27,8 @@
       },
       {
         "pagePath": "pages/bless/bless",
-        "iconPath": "static/icons/blessing_icon_unselected.png",
-        "selectedIconPath": "static/icons/blessing_icon_selected.png",
+        "iconPath": "static/icons/blessing_icon_selected.png",
+        "selectedIconPath": "static/icons/blessing_icon_unselected.png",
         "text": "送祝福"
       }
     ]
