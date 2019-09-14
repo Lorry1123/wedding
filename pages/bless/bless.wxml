@@ -1,10 +1,12 @@
 <!--pages/bless/bless.wxml-->
 <view>
   <view class="message_area">
-  11
+    <view wx:for="{{other_messages}}" wx:for-index="index" wx:for-item="item">
+      {{item.avatar}} : {{item.nick}} : {{item.msg}}
+    </view>
   </view>
   <view class="type_area">
-    <input bindinput="onMessageChange" class="input" placeholder="输入你的祝福吧~" confirm-type="send" />
+    <input bindinput="onMessageChange" value="{{message}}" class="input" placeholder="输入你的祝福吧~" confirm-type="send" />
     <button class="button" wx:if="{{canIUse && !hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
     <button bindtap="sendMessage" class="button" wx:else>发送</button>
   </view>

@@ -8,6 +8,7 @@ Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     message: '',
+    other_messages: [],
   },
   onMessageChange: function(data, event) {
     this.setData({
@@ -16,11 +17,26 @@ Page({
   },
   sendMessage: function() {
     console.log('data: ', this.data.message);
+    var msg = this.data.message.trim();
+    if (msg.length <= 0) {
+      return;
+    }
+    var other_msgs = this.data.other_messages;
+    other_msgs.push({
+      nick: this.data.userInfo.nickName,
+      avatar: this.data.userInfo.avatarUrl,
+      msg: this.data.message,
+    });
+    console.log(other_msgs);
+    this.setData({
+      other_messages: other_msgs,
+      message: '',
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
+  onLoad: function() {
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -52,7 +68,7 @@ Page({
       })
     }
   },
-  getUserInfo: function (e) {
+  getUserInfo: function(e) {
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,
@@ -63,49 +79,49 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })
