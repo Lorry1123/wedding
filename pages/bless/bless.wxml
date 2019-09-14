@@ -1,2 +1,11 @@
 <!--pages/bless/bless.wxml-->
-<text>pages/bless/bless.wxml</text>
+<view>
+  <view class="message_area">
+  11
+  </view>
+  <view class="type_area">
+    <input bindinput="onMessageChange" class="input" placeholder="输入你的祝福吧~" confirm-type="send" />
+    <button class="button" wx:if="{{canIUse && !hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
+    <button bindtap="sendMessage" class="button" wx:else>发送</button>
+  </view>
+</view>
