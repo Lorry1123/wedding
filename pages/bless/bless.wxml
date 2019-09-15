@@ -31,7 +31,7 @@
   </scroll-view>
 
   <view class="type_area">
-    <input bindinput="onMessageChange" value="{{message}}" class="input" placeholder="输入你的祝福吧~" confirm-type="send" />
+    <input bindinput="onMessageChange" value="{{message}}" class="input" placeholder="输入你的祝福吧~" confirm-type="send" bindconfirm="sendMessage" />
     <button class="button" wx:if="{{canIUse && !hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
     <button bindtap="sendMessage" class="button" wx:else>发送</button>
   </view>
