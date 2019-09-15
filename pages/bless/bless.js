@@ -88,12 +88,13 @@ Page({
       success: (res) => {
         this.setData({
           other_messages: res.data.data.reverse(),
+          message_height: res.data.data.length * 1000,
         });
 
         if (this.data.visible) {
           setTimeout(() => {
             this.fetchMessages();
-          }, 2000)
+          }, 1000)
         }
       }
     })
