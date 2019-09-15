@@ -93,7 +93,7 @@ Page({
         if (this.data.visible) {
           setTimeout(() => {
             this.fetchMessages();
-          }, 10000)
+          }, 2000)
         }
       }
     })
