@@ -80,7 +80,7 @@ Page({
       hasUserInfo: true
     })
   },
-  fetchMessages: function() {
+  fetchMessages: function(down=false) {
     wx.request({
       url: 'https://www.lorryzz.cn/wedding/messages',
       method: 'post',
@@ -88,8 +88,12 @@ Page({
       success: (res) => {
         this.setData({
           other_messages: res.data.data.reverse(),
-          message_height: res.data.data.length * 1000,
         });
+        if (down) {
+          this.setData({
+            message_height: res.data.data.length * 1000,
+          })
+        }
 
         if (this.data.visible) {
           setTimeout(() => {
@@ -113,7 +117,7 @@ Page({
     this.setData({
       visible: true,
     }, () => {
-      this.fetchMessages();
+      this.fetchMessages(true);
     })
   },
 
