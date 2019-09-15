@@ -2,6 +2,7 @@
 
 .container {
   display: flex;
+  width: 100%;
 }
 
 .message_area {
@@ -16,11 +17,60 @@
   word-break: break-all;
 }
 
-.message_area .othors {
-  text-align: left;
+.message_area .message_block {
+  width: 100%;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
-.message_area .me {
+.message_area .message_block.left{
+  align-items: flex-start;
+}
+
+.message_area .message_block.right {
+  align-items: flex-end;
+}
+
+.message_container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.message_area .message_block .avatar {
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  flex-grow: 0;
+}
+
+
+.message_area .message_block .content {
+  display: inline-block;
+  max-width: 300px;
+}
+
+.message_area .message_block .content .text {
+  display: inline-block;
+  text-align: left;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  background-color: #00be70;
+  font: 16px;
+  line-height: 24px;
+  padding: 10px;
+  border-radius: 4px;
+  margin: 0 10px;
+}
+
+.message_area .message_block .content .nick {
+  font-size: 14px;
+  line-height: 20px;
+  color: #d8d8d8;
+  margin: 0 10px;
+}
+
+.nick.right {
   text-align: right;
 }
 

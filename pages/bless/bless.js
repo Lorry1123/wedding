@@ -9,6 +9,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     message: '',
     other_messages: [],
+    message_height: 0,
   },
   onMessageChange: function(data, event) {
     this.setData({
@@ -16,7 +17,6 @@ Page({
     })
   },
   sendMessage: function() {
-    console.log('data: ', this.data.message);
     var msg = this.data.message.trim();
     if (msg.length <= 0) {
       return;
@@ -27,17 +27,24 @@ Page({
       avatar: this.data.userInfo.avatarUrl,
       msg: this.data.message,
     });
-    for (var i = 0; i <= 9; i ++) {
+    for (var i = 0; i < 5; i ++) {
       other_msgs.push({
         nick: this.data.userInfo.nickName,
         avatar: this.data.userInfo.avatarUrl,
         msg: this.data.message,
       });
     }
-    console.log(other_msgs);
+    for (var i = 0; i < 5; i++) {
+      other_msgs.push({
+        nick: this.data.userInfo.nickName + '111',
+        avatar: this.data.userInfo.avatarUrl,
+        msg: this.data.message,
+      });
+    }
     this.setData({
       other_messages: other_msgs,
       message: '',
+      message_height: other_msgs.length * 1000,
     })
   },
   /**

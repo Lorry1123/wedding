@@ -1,10 +1,36 @@
 <!--pages/bless/bless.wxml-->
 <view>
-  <view class="message_area">
-    <view wx:for="{{other_messages}}" wx:for-index="index" wx:for-item="item">
-      {{item.avatar}} : {{item.nick}} : {{item.msg}}
+  <scroll-view class="message_area" scroll-y="{{true}}" enable-flex="{{tre}}" scroll-top="{{message_height}}">
+    <view class="message_block {{item.nick!==userInfo.nickName?'left':'right'}}" wx:for="{{other_messages}}" wx:for-index="index" wx:for-item="item">
+      <view wx:if="{{item.nick!==userInfo.nickName}}" class="message_container">
+        <image class="avatar" src="{{item.avatar}}" />
+        <view class="content">
+          <view class="nick">
+            {{item.nick}}
+          </view>
+          <view class="text">
+            {{item.msg}}
+          </view>
+
+        </view>
+      </view>
+      <view wx:else class="message_container">
+        <view class="content">
+          <view class="nick right">
+            {{item.nick}}
+          </view>
+          <view class="text">
+            {{item.msg}}
+          </view>
+
+        </view>
+        <image class="avatar" src="{{item.avatar}}" />
+      </view>
     </view>
-  </view>
+    <view id="scroll-target">
+    </view>
+  </scroll-view>
+
   <view class="type_area">
     <input bindinput="onMessageChange" value="{{message}}" class="input" placeholder="输入你的祝福吧~" confirm-type="send" />
     <button class="button" wx:if="{{canIUse && !hasUserInfo}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">发送</button>
