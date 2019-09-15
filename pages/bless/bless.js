@@ -17,30 +17,22 @@ Page({
     })
   },
   sendMessage: function() {
-    var msg = this.data.message.trim();
+    const msg = this.data.message.trim();
     if (msg.length <= 0) {
       return;
     }
-    var other_msgs = this.data.other_messages;
-    other_msgs.push({
+    const new_msg = {
       nick: this.data.userInfo.nickName,
       avatar: this.data.userInfo.avatarUrl,
-      msg: this.data.message,
-    });
-    for (var i = 0; i < 5; i ++) {
-      other_msgs.push({
-        nick: this.data.userInfo.nickName,
-        avatar: this.data.userInfo.avatarUrl,
-        msg: this.data.message,
-      });
+      msg: msg,
     }
-    for (var i = 0; i < 5; i++) {
-      other_msgs.push({
-        nick: this.data.userInfo.nickName + '111',
-        avatar: this.data.userInfo.avatarUrl,
-        msg: this.data.message,
-      });
-    }
+    var other_msgs = this.data.other_messages;
+    other_msgs.push(new_msg);
+    wx.request({
+      url: 'https://www.lorryzz.cn/wedding/messages/new',
+      method: 'post',
+      data: new_msg,
+    })
     this.setData({
       other_messages: other_msgs,
       message: '',
@@ -60,7 +52,6 @@ Page({
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
-        console.log(res.userInfo);
         this.setData({
           userInfo: res.userInfo,
           hasUserInfo: true
@@ -89,7 +80,24 @@ Page({
       hasUserInfo: true
     })
   },
+  fetchMessages: function() {
+    wx.request({
+      url: 'https://www.lorryzz.cn/wedding/messages',
+      method: 'post',
+      data: {},
+      success: (res) => {
+        this.setData({
+          other_messages: res.data.data.reverse(),
+        });
 
+        if (this.data.visible) {
+          setTimeout(() => {
+            this.fetchMessages();
+          }, 10000)
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -101,14 +109,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.setData({
+      visible: true,
+    }, () => {
+      this.fetchMessages();
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    this.setData({
+      visible: false,
+    })
   },
 
   /**

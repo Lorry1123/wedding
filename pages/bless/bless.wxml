@@ -22,7 +22,6 @@
           <view class="text">
             {{item.msg}}
           </view>
-
         </view>
         <image class="avatar" src="{{item.avatar}}" />
       </view>
