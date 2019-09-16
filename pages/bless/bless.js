@@ -10,6 +10,8 @@ Page({
     message: '',
     other_messages: [],
     message_height: 0,
+    userInfo: {},
+    hasUserInfo: false,
   },
   onMessageChange: function(data, event) {
     this.setData({
@@ -61,7 +63,7 @@ Page({
       // 在没有 open-type=getUserInfo 版本的兼容处理
       wx.getUserInfo({
         success: res => {
-          app.globalData.userInfo = res.userInfo
+          app.globalData.userInfo = res.userInfo;
           this.setData({
             userInfo: res.userInfo,
             hasUserInfo: true
@@ -74,7 +76,7 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    app.globalData.userInfo = e.detail.userInfo
+    app.globalData.userInfo = e.detail.userInfo;
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
