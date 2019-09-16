@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/invatation/invatation",
     "pages/about/about",
     "pages/bless/bless"
   ],
