@@ -13,7 +13,7 @@
     <span class="title">
       宴会地址
     </span>
-    <view class="invatationItemContainer">
+    <view class="invatationItemContainer map">
       <map class="invatationItem map" longitude="104.718552" latitude="31.457208" markers="{{mianyang_map_markers}}" scale="18"></map>
     </view>
     

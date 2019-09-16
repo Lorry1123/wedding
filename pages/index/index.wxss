@@ -12,11 +12,12 @@
 }
 
 .title {
-  font-size: 20px;
-  height: 30px;
-  line-height: 30px;
+  font-size: 24px;
+  height: 36px;
+  line-height: 36px;
   display: block;
   width: 100%;
+  font-weight: bold;
 }
 
 .invatationItemContainer {
@@ -36,8 +37,12 @@
   border-radius: 10px;
 }
 
+.invatationItemContainer.map {
+  padding-top: 200px;
+}
 .invatationItem.map {
   width: 95%;
+  height: 200px;
 }
 
 .marginTopFix {
