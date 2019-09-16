@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="invatationPageContainer">
+<scroll-view class="invatationPageContainer" scroll-y="{{true}}">
   <view class="blockContainer">
     <span class="title">
       邀请函
@@ -14,8 +14,9 @@
       宴会地址
     </span>
     <view class="invatationItemContainer map">
-      <map class="invatationItem map" longitude="104.718552" latitude="31.457208" markers="{{mianyang_map_markers}}" scale="18"></map>
+      <map class="invatationItem map" longitude="104.718552" latitude="31.457208" 
+      markers="{{mianyang_map_markers}}" scale="18" catchtap="openLocation">
+      </map>
     </view>
-    
   </view>
-</view>
+</scroll-view>

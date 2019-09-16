@@ -18,6 +18,17 @@ Page({
     ],
   },
   onLoad: function() {
-    console.log('load');
+    
   },
+  openLocation: function(e) {
+    if (!e.changedTouches) {
+      return;
+    }
+    wx.openLocation({
+      latitude: 31.457208,
+      longitude: 104.718552,
+      name: '王子大酒店',
+    });
+    e.stop
+  }
 })
