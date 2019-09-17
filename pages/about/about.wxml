@@ -1,2 +1,22 @@
 <!--pages/about/about.wxml-->
-<text>说明页desu!</text>
+<scroll-view scroll-y="{{true}}" class="aboutPageContainer">
+  <view wx:for="{{imageItems}}">
+    <view class="blockContainer">
+      <swiper class="swiper" autoplay="{{true}}" interval="{{3000}}" indicator-dots="{{true}}">
+        <block wx:for="{{item.srcs}}">
+          <swiper-item class="imageContainer">
+            <image class="image" src="https://wedding-1257884187.cos.ap-chengdu.myqcloud.com/{{item}}.jpg" />
+          </swiper-item>
+        </block>
+
+      </swiper>
+      <view class="text">
+        <block wx:for="{{item.texts}}">
+          <view>
+            {{item}}
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</scroll-view>
