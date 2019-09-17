@@ -17,7 +17,7 @@
   line-height: 36px;
   display: block;
   width: 100%;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .invatationItemContainer {

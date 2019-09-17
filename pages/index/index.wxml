@@ -11,7 +11,7 @@
   </view>
   <view class="blockContainer marginTopFix">
     <span class="title">
-      宴会地址
+      导航
     </span>
     <view class="invatationItemContainer map">
       <map class="invatationItem map" longitude="104.718552" latitude="31.457208" 
